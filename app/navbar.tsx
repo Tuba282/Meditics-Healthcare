@@ -23,13 +23,13 @@ import ResponsiveAppBar from "./navbar(mobile)"
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Team",
-    href: "/docs/primitives/alert-dialog",
+    href: "/team",
     description:
       "Our doctors are more than just healthcare professionals",
   },
   {
     title: "Team Members",
-    href: "/docs/primitives/hover-card",
+    href: "/teamMember/:id",
     description:
       "Our team compassionate caregivers, committed to providing personalized, expert medical care.",
   }
@@ -51,26 +51,16 @@ function Navbar() {
           <NavigationMenuItem>
             <NavigationMenuTrigger>Home</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.80fr_1fr]">
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
                     <Link
                       href="/"
-                      className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
+                      className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b no-underline outline-hidden select-none focus:shadow-md"
                     >
-                      <div className="mt-4 mb-2 text-lg font-medium">
-                        shadcn/ui
+                      <div className="text-lg font-medium">
+                        <Image src={'/preview.png'} alt="logo" className="object-cover w-full! h-full! rounded" width={100} height={200} />
                       </div>
-                      <p className="text-muted-foreground text-sm leading-tight">
-                        Beautifully designed components built with Tailwind CSS.
-                      </p>
-                      <div className="mt-4 mb-2 text-lg font-medium">
-                        shadcn/ui
-                      </div>
-                      <p className="text-muted-foreground text-sm leading-tight">
-                        Beautifully designed components built with Tailwind CSS.
-                      </p>
-
                     </Link>
                   </NavigationMenuLink>
                 </li>

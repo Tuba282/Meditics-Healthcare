@@ -1,7 +1,8 @@
+
 import type { Metadata } from "next";
 import "./globals.css";
-
-
+import Navbar from "./navbar";
+import Footer from "./footer";
 
 export const metadata: Metadata = {
   title: "Meditics Medical-Healthcare",
@@ -12,7 +13,9 @@ export default function RootLayout({children,}: Readonly<{  children: React.Reac
   return (
     <html>
       <body>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

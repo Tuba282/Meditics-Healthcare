@@ -9,8 +9,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
 import Image from 'next/image';
+import Link from 'next/link';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Home', 'About', 'Team', 'Blog', 'Contact', 'Services'];
 
 function ResponsiveAppBar() {
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -56,13 +57,13 @@ function ResponsiveAppBar() {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                                    <Link href={`/${page.toLowerCase()}`}><Typography sx={{ textAlign: 'center' }} >{page}</Typography></Link>
                                 </MenuItem>
                             ))}
                         </Menu>
                     </Box>
                     {/* isse mobile size mein image show hogi */}
-                    <Image src={'https://meditics.temptics.com/assets/img/logo-white.svg'} alt="logo" className="me-20 flex md:hidden" width={200} height={100} />
+                    <Image src={'https://meditics.temptics.com/assets/img/logo-white.svg'} alt="logo" className="me-20 flex lg:hidden" width={200} height={100} />
 
 
                 </Toolbar>
