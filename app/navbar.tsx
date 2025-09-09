@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 import {
@@ -38,14 +37,14 @@ const components: { title: string; href: string; description: string }[] = [
 function Navbar() {
   return (
 
-    <div>
-      <div className="relative w-full h-8 bg-[var(--darkBlue)]">
+    <div className="bg-[var(--darkBlue)]">
+      <div className="relative w-full h-8 ">
         <span style={{ clipPath: 'polygon(0 0, 94% 0, 97% 100%, 0% 100%)' }} className='w-[90%] sm:w-[60%] xl:w-[50%] h-full absolute bg-[var(--lightBlue)] flex justify-center items-center gap-4'>
           <span className='hidden md:flex justify-center items-center gap-4 text-white text-xs'><FaPhone className='text-white text-lg' /> <b>Help Line</b>: +208-6666-0112</span>
           <span className=' flex md:justify-center items-center gap-2 sm:gap-4 text-white text-xs'><LuClock5 className='text-white text-lg' />  <b>Open Hours</b>: Mon - Fri 8.00 am - 6.00 pm</span>
         </span>
       </div>
-      <NavigationMenu viewport={false} className="w-[80%] rounded-b-2xl h-20 hidden lg:flex bg-amber-200 mx-auto px-2 md:px-10">
+      <NavigationMenu viewport={false} className="w-[80%] drop-shadow-xs drop-shadow-black z-10 fixed top-8 left-10 rounded-b-2xl rounded-r-2xl h-20 hidden lg:flex bg-white mx-auto px-2 md:px-10">
         <Image src={'/logo.svg'} alt="logo" className="me-20" width={200} height={100} />
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -108,7 +107,7 @@ function Navbar() {
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
-        <Button variant="outline" className="hidden xl:flex">BOOK AN APPOINTMENT</Button>
+        <Button variant="outline" className="hidden xl:flex bg-[var(--totaGreen)] hover:bg-[var(--darkBlue)] hover:text-[var(--totaGreen)]">BOOK AN APPOINTMENT</Button>
       </NavigationMenu>
       <ResponsiveAppBar />
     </div>

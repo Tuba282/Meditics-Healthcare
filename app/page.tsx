@@ -1,12 +1,15 @@
 import React from 'react'
-import Outlet from './outlet'
+import Hero from './home/hero'
 
 const Home = () => {
   return (
-    <div className=''>
-      <Outlet/>
+    <div>
+      <Hero/>
     </div>
   )
 }
 
 export default Home
+
+
+
