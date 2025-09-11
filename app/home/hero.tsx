@@ -6,7 +6,7 @@ import { BsHeartFill } from "react-icons/bs";
 import SwiperSlider from './swiper';
 import { FaFacebookSquare, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { RiInstagramFill } from "react-icons/ri";
-
+import AOS from 'aos';
 
 const Hero = () => {
   return (
@@ -16,10 +16,10 @@ const Hero = () => {
       <div className="relative flex flex-col gap-6 xl:flex-row items-center max-w-8xl  px-5 lg:px-10">
         <div className="w-full xl:w-[40%] sm:p-10">
           <span className='w-25 py-1 px-3 text-sm flex justify-center items-center gap-3 text-[var(--totaGreen)]  rounded-full border-1 border-[var(--totaGreen)] '><BsHeartFill /> HI I AM</span>
-          <h2 className="text-4xl text-white font-extrabold font-[sora] text-center md:text-left  tracking-wider leading-relaxed " data-aos="fade-right" data-aos-duration="1500">
+          <h2 className="text-4xl text-white font-extrabold font-[sora] text-center md:text-left  tracking-wider leading-relaxed ">
             Meet Dr. Tushar Raja — Your Trusted Healthcare Partner
           </h2>
-          <h3 data-aos="fade-right" data-aos-duration="1600"
+          <h3
             className="my-6 md:my-10 text-md text-center md:text-left text-gray-700 font-light">
             Dr. Tushar is a highly experienced and compassionate [Specialization, e.g., General Physician / Cardiologist / Dermatologist] dedicated.
           </h3>

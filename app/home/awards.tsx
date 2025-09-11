@@ -22,7 +22,7 @@ export default function Awards() {
             <Image src="https://meditics.temptics.com/assets/img/qualification-vector-1.svg" width={300} height={300} className="absolute top-0 left-0" alt="Doctor" />
             <Image src="https://meditics.temptics.com/assets/img/qualification-vector-2.svg" width={300} height={300} className="absolute top-0 right-0" alt="Doctor" />
                             
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12" id="awards">
                 {/* Label */}
                 <div className="flex justify-center">
                     <span className='w-50  p-1 my-3 px-3 text-sm hidden md:flex justify-center items-center gap-3 text-blue-700  rounded-full border-1 border-blue-700 font-semibold'><BsHeartFill /> My Qualification</span>

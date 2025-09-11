@@ -5,8 +5,13 @@ import Services from './services'
 import Banner from './banner'
 import Awards from './awards'
 import TestimonialsSlider from './testimonial'
+import Consultant from './consultant'
+import BlogSection from './blogs'
+import Contact from './contact'
 
 const Home = () => {
+
+  
   return (
     <div>
       <Hero/>
@@ -15,6 +20,9 @@ const Home = () => {
       <Banner/>
       <Awards/>
       <TestimonialsSlider/>
+      <Consultant/>
+      <BlogSection/>
+      <Contact/>
     </div>
   )
 }

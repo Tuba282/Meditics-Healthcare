@@ -64,7 +64,7 @@ function SelectActionCard() {
                 <Card className='my-5 w-80! ' key={card.title}>
                     <CardActionArea className=''
                     >
-                        <CardContent data-aos="fade-left" data-aos-duration="1500" className='h-60 group flex flex-col gap-3 p-5 rounded-2! border-2 hover:border-[var(--lightBlue)]  transition-all duration-300'>
+                        <CardContent className='h-60 group flex flex-col gap-3 p-5 rounded-2! border-2 hover:border-[var(--lightBlue)]  transition-all duration-300'>
                             <div className="w-16 h-16 bg-[#F2F2F2] group-hover:bg-[#0d6dfd]  rounded flex items-center justify-center mb-2">
                                 {card.icon}
                             </div>
@@ -89,7 +89,7 @@ const Services = () => {
     return (
         <div className='relative min-h-[500px] bg-[#F2F2F2] flex flex-col justify-center items-center p-10 my-5 sm:my-10 md:my-20 px-5 lg:p-20'>
             <span className='w-50 py-1 my-3 px-3 text-sm flex justify-center items-center gap-3 text-[var(--lightBlue)]  rounded-full border-1 border-[var(--lightBlue)] '><BsHeartFill /> Services I Provide <BsHeartFill /></span>
-            <h1 className='group text-center text-3xl sm:text-4xl font-bold mb-5 grid gap-2' data-aos="fade-right" data-aos-duration="1200">Medical Services I Provide
+            <h1 className='group text-center text-3xl sm:text-4xl font-bold mb-5 grid gap-2'>Medical Services I Provide
                 {/* <div className="bg-[var(--darkBlue)] rounded-2xl h-[3px] w-0 transition-all duration-500 group-hover:w-130"></div> */}
             </h1>
             <Image src="https://meditics.temptics.com/assets/img/service-vector-1.svg" width={200} height={200} className="w-auto! h-auto! absolute top-0 left-0 object-contain" alt="Doctor" />

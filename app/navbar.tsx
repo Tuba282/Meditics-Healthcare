@@ -63,14 +63,14 @@ function Navbar() {
                     </Link>
                   </NavigationMenuLink>
                 </li>
-                <ListItem href="/docs" title="Introduction">
-                  Re-usable components built using Radix UI and Tailwind CSS.
+                <ListItem href="/home#awards" title="Qualification">
+                  My Qualification & Awards
                 </ListItem>
-                <ListItem href="/docs/installation" title="Installation">
-                  How to install dependencies and structure your app.
+                <ListItem href="/home#consultant" title="Doctor Consult">
+                  Consult Your Doctor Online — Anytime, Anywhere
                 </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Typography">
-                  Styles for headings, paragraphs, lists...etc
+                <ListItem href="/home#feedbacks" title="Clients Feedbacks">
+                  I strongly believe that medicine is not just about treating diseases, but about understanding people, building trust, and guiding them toward long-term wellness.
                 </ListItem>
               </ul>
             </NavigationMenuContent>
