@@ -1,8 +1,13 @@
 import React from 'react'
+import Banner from './banner'
+import Service from './service'
 
 const Services = () => {
   return (
-    <div>Services</div>
+    <div>
+      <Banner/>
+      <Service/>
+    </div>
   )
 }
 

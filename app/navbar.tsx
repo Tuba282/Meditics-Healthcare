@@ -93,7 +93,7 @@ function Navbar() {
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-              <Link href="/docs">Services</Link>
+              <Link href="/services">Services</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
