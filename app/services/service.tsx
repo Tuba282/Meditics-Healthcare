@@ -1,4 +1,3 @@
-"use client";
 
 import { RiMicroscopeFill } from "react-icons/ri";
 import React from "react";
@@ -7,12 +6,6 @@ import { LuDna } from "react-icons/lu";
 import { TiArrowForward } from "react-icons/ti";
 import Image from "next/image";
 
-
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
-
-import { FreeMode, Autoplay, Keyboard } from 'swiper/modules';
 import { Marquee } from "./marquee";
 
 const services = [
@@ -103,76 +96,6 @@ const Service: React.FC = () => {
                 </div>
             </div>
 
-            {/* <Swiper
-                loop={true}
-                slidesPerView={4}
-                spaceBetween={50}
-                autoplay={{
-                    
-                    disableOnInteraction: true
-                }}
-                keyboard={{
-                    enabled: true
-                }}
-                freeMode={true}
-                modules={[FreeMode, Autoplay, Keyboard]}
-                className="mySwiper hidden! md:flex! bg-[var(--totaGreen)]">
-                <SwiperSlide>
-                    <p className='my-4 flex justify-center gap-4 items-center font-extrabold text-2xl md:text-4xl '>
-                        <Image src="https://meditics.temptics.com/assets/img/banner-vector-2.svg" width={50} height={50} className="w-[30px]! h-[30px]! grayscale-100" alt="Doctor" />
-                        NEUROLOGY
-                    </p>
-                </SwiperSlide>
-                <SwiperSlide>
-
-                    <p className='my-4 flex justify-center gap-4 items-center font-extrabold text-2xl md:text-4xl '>
-                        <Image src="https://meditics.temptics.com/assets/img/banner-vector-2.svg" width={50} height={50} className="w-[30px]! h-[30px]! grayscale-100" alt="Doctor" />
-                        ORTHOPEDICS
-                    </p>
-                </SwiperSlide>
-                <SwiperSlide>
-
-                    <p className='my-4 flex justify-center gap-4 items-center font-extrabold text-2xl md:text-4xl '>
-                        <Image src="https://meditics.temptics.com/assets/img/banner-vector-2.svg" width={50} height={50} className="w-[30px]! h-[30px]! grayscale-100" alt="Doctor" />
-                        DERMATOLOGY
-                    </p>
-                </SwiperSlide>
-                <SwiperSlide>
-
-                    <p className='my-4 flex justify-center gap-4 items-center font-extrabold text-2xl md:text-4xl '>
-                        <Image src="https://meditics.temptics.com/assets/img/banner-vector-2.svg" width={50} height={50} className="w-[30px]! h-[30px]! grayscale-100" alt="Doctor" />
-                        NEUROLOGY
-                    </p>
-                </SwiperSlide>
-                <SwiperSlide>
-
-                    <p className='my-4 flex justify-center gap-4 items-center font-extrabold text-2xl md:text-4xl '>
-                        <Image src="https://meditics.temptics.com/assets/img/banner-vector-2.svg" width={50} height={50} className="w-[30px]! h-[30px]! grayscale-100" alt="Doctor" />
-                        ORTHOPEDICS
-                    </p>
-                </SwiperSlide>
-                <SwiperSlide>
-
-                    <p className='my-4 flex justify-center gap-4 items-center font-extrabold text-2xl md:text-4xl '>
-                        <Image src="https://meditics.temptics.com/assets/img/banner-vector-2.svg" width={50} height={50} className="w-[30px]! h-[30px]! grayscale-100" alt="Doctor" />
-                        DERMATOLOGY
-                    </p>
-                </SwiperSlide>
-                <SwiperSlide>
-
-                    <p className='my-4 flex justify-center gap-4 items-center font-extrabold text-2xl md:text-4xl '>
-                        <Image src="https://meditics.temptics.com/assets/img/banner-vector-2.svg" width={50} height={50} className="w-[30px]! h-[30px]! grayscale-100" alt="Doctor" />
-                        Hematology
-                    </p>
-                </SwiperSlide>
-                <SwiperSlide>
-
-                    <p className='my-4 flex justify-center gap-4 items-center font-extrabold text-2xl md:text-4xl '>
-                        <Image src="https://meditics.temptics.com/assets/img/banner-vector-2.svg" width={50} height={50} className="w-[30px]! h-[30px]! grayscale-100" alt="Doctor" />
-                        ORTHOPEDICS
-                    </p>
-                </SwiperSlide>
-            </Swiper> */}
             <Marquee/>
         </section>
     );

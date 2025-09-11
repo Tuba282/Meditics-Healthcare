@@ -1,14 +1,18 @@
 
 import Image from "next/image";
+import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa";
-;
 
-const Banner = () => {
+interface BannerProps {
+  page: React.ReactNode;
+}
+
+const Banner = (page: BannerProps) => {
   return (
-    <div className='relative w-full min-h-80 bg-gradient-to-r from-blue-950 from-10% via-[#041C33] via-30% to-[#041C33] to-90% flex flex-col justify-center items-center '>
+    <div className='relative w-full h-48 md:min-h-80 bg-gradient-to-r from-blue-950 from-10% via-[#041C33] via-30% to-[#041C33] to-90% flex flex-col justify-center items-center '>
       {/* bg-[#041C33]  */}
-      <h1 className='font-bold text-white text-4xl md:text-6xl font-sans italic'>Service</h1>
-      <span className="font-semibold text-white text-xl md:text-2xl font-sans italic flex gap-3 justify-center items-center my-5">Home <FaChevronRight className="" /> Services</span>
+      <h1 className='font-bold text-white text-4xl md:text-6xl font-sans italic'>{page.page}</h1>
+      <span className=" text-white text-md md:text-2xl font-sans italic flex gap-3 justify-center items-center my-5 capitalize"><Link href={'home'}>Home</Link> <FaChevronRight className="text-sm" /><Link href={`${page.page}`}>{page.page}</Link> </span>
 
       <Image src="https://meditics.temptics.com/assets/img/banner-vector-2.svg" width={50} height={50} style={{ animation: 'shortPlus 2s infinite forwards linear' }} className="w-[80px]! h-[80px]! z-1 absolute top-25 left-130 blur-[1px] grayscale-50 transition duration-700" alt="Doctor" />
       <Image src="https://meditics.temptics.com/assets/img/banner-vector-2.svg" width={50} height={50} style={{ animation: 'upDown 5s infinite forwards linear' }} className="w-[40px]! h-[40px]! z-1 absolute top-20 left-30 blur-[1px] grayscale-50 transition duration-700" alt="Doctor" />

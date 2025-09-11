@@ -1,12 +1,12 @@
 import React from 'react'
-import Banner from './banner'
+import Banner from '../banner'
 import Service from './service'
 
 const Services = () => {
   return (
     <div>
-      <Banner/>
-      <Service/>
+      <Banner page="services" />
+      <Service />
     </div>
   )
 }
