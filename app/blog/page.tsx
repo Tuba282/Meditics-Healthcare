@@ -6,6 +6,9 @@ import { useState } from "react";
 import { FaRegClock } from "react-icons/fa";
 import Image from 'next/image';
 import Banner from '../banner';
+import Link from 'next/link';
+import { TiArrowBack, TiArrowForward } from 'react-icons/ti';
+import { TfiEmail } from 'react-icons/tfi';
 
 
 
@@ -135,8 +138,8 @@ const Blog = () => {
           {/* Blog Posts*/}
           <div className="lg:col-span-2 space-y-8 " >
             {paginatedPosts.map((post, i) => (
-              <div key={i} className="bg-white rounded-lg hover:shadow-md overflow-hidden">
-                <Image width={30} height={30} src={post.img} alt={post.title} className="w-full object-cover" />
+              <div key={i} className="rounded-lg shadow-sm bg-gray-100 overflow-hidden">
+                <Image width={300} height={300} src={post.img} alt={post.title} className="w-full! h-full! object-cover" />
                 <div className="lg:p-6 p-2 space-y-2">
                   {/* Meta Info */}
                   <div className="text-sm text-gray-500 flex items-center mb-5 gap-4">
@@ -151,16 +154,14 @@ const Blog = () => {
                       <FaRegClock color="#B6B7B9" className="w-[19px] h-[19px]" />
                       {post.readTime}
                     </span>
-                    <span className="flex gap-1">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24">
-                        <path fill="#B6B7B9" d="M17.25 2.75H6.75A4.75 4.75 0 0 0 2 7.5v9a4.75 4.75 0 0 0 4.75 4.75h10.5A4.76 4.76 0 0 0 22 16.5v-9a4.76 4.76 0 0 0-4.75-4.75m-3.65 8.32a3.26 3.26 0 0 1-3.23 0L3.52 7.14a3.25 3.25 0 0 1 3.23-2.89h10.5a3.26 3.26 0 0 1 3.23 2.89z" stroke-width="0.2" stroke="#040000" />
-                      </svg>
+                    <span className="flex gap-3 items-center  ">
+                      <TfiEmail color="#B6B7B9" className="w-[19px] h-[19px]" />
                       {post.comments} Comments
                     </span>
                   </div>
 
                   {/* Title + Excerpt */}
-                  <h2 className="lg:text-3xl text-2xl font-bold text-[#041C33] hover:text-[#0D6DFD] transition">
+                  <h2 className="lg:text-3xl text-2xl font-bold text-[#041C33] transition">
                     {post.title}
                   </h2>
                   <p className="text-gray-500 mt-2 mb-4" style={{ fontSize: "15px" }}>
@@ -172,23 +173,10 @@ const Blog = () => {
                   <button
                     className="group flex items-center gap-3 text-sm text-[#0D6DFD] border border-[#0D6DFD] hover:bg-[#0D6DFD] hover:text-[white] px-5 py-3 rounded font-semibold transition-colors duration-300"
                   >
-                    <a href={`/detailblog/${i}`} className="flex  lg:w-25 md:w-50 w-full  btn justify-center items-center gap-2  ">
+                    <Link href={`/detailBlog/${i}`} className="flex  lg:w-25 md:w-50 w-full  btn justify-center items-center gap-2  ">
                       <small>READ MORE</small>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="rotate fill-current stroke-current text-[#0D6DFD] group-hover:text-[white]"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fill="currentColor"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          d="M16 5c0 .742.733 1.85 1.475 2.78c.954 1.2 2.094 2.247 3.401 3.046C21.856 11.425 23.044 12 24 12m0 0c-.956 0-2.145.575-3.124 1.174c-1.307.8-2.447 1.847-3.401 3.045C16.733 17.15 16 18.26 16 19m8-7H0"
-                        />
-                      </svg>
-                    </a>
+                      <TiArrowForward className="text-[#0D6DFD] text-xl group-hover:text-white" />
+                    </Link>
                   </button>
 
                 </div>
@@ -199,20 +187,8 @@ const Blog = () => {
               <button className="p-3 border border-gray-400 bg-white rounded-full transition"
                 onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="rotate2 fill-current stroke-current hover:text-[#0D6DFD] text-[#041C33] bg-white  group-hover:text-[white]"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    d="M16 5c0 .742.733 1.85 1.475 2.78c.954 1.2 2.094 2.247 3.401 3.046C21.856 11.425 23.044 12 24 12m0 0c-.956 0-2.145.575-3.124 1.174c-1.307.8-2.447 1.847-3.401 3.045C16.733 17.15 16 18.26 16 19m8-7H0"
-                  />
-                </svg>
+                <TiArrowBack className="rover:text-[#0D6DFD] text-[#041C33] bg-white group-hover:text-[white]" />
+
               </button>
 
               {[...Array(totalPages)].map((_, i) => (
@@ -230,26 +206,13 @@ const Blog = () => {
               <button className="p-3 border border-gray-400 bg-white rounded-full transition"
                 onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="rotate fill-current stroke-current  hover:text-[#0D6DFD] text-[#041C33] bg-white group-hover:text-[white]"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    d="M16 5c0 .742.733 1.85 1.475 2.78c.954 1.2 2.094 2.247 3.401 3.046C21.856 11.425 23.044 12 24 12m0 0c-.956 0-2.145.575-3.124 1.174c-1.307.8-2.447 1.847-3.401 3.045C16.733 17.15 16 18.26 16 19m8-7H0"
-                  />
-                </svg>
+                <TiArrowForward className="hover:text-[#0D6DFD] text-[#041C33] bg-white group-hover:text-[white]" />
               </button>
             </div>
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-8 p-2">
+          <div className="space-y-8 p-2 hidden lg:block">
             {/* Search */}
             <div className="bg-[#F2F2F2] rounded-lg  p-4" >
               <div className="flex bg-white  lg:justify-between lg:items-start rounded-full p-2  hover:shadow-md">
@@ -268,12 +231,12 @@ const Blog = () => {
 
             {/* Categories */}
             <div className="bg-[#F2F2F2]  p-4 rounded-lg hover:shadow-md"  >
-              <h2 className="text-xl font-semibold mb-4 text-[#041C33]" >Categories</h2>
+              <h2 className="text-xl font-bold font-sans mb-4 text-[#041C33]" >Categories</h2>
               <ul className="space-y-2 text-sm text-gray-700">
                 {categories.map((cat, i) => (
-                  <li key={i} className="hover:text-[#0D6DFD] cursor-pointer flex justify-between">
-                    <span className="heading">{cat.title}</span>
-                    <span className="heading">{cat.cat}</span>
+                  <li key={i} className="cursor-pointer flex justify-between">
+                    <span className="heading text-xs">{cat.title}</span>
+                    <span className="heading text-xs">{cat.cat}</span>
                   </li>
                 ))}
               </ul>
@@ -285,7 +248,7 @@ const Blog = () => {
               <ul className="space-y-2 text-sm text-gray-700">
                 {recentPosts.map((post, i) => (
                   <li key={i}>
-                    <Image width={30} height={30} src={post.img} alt="img" className="mb-4 rounded  w-full" />
+                    <Image width={300} height={300} src={post.img} alt="img" className="mb-4 rounded  w-full" />
                     <span className="text-xs text-gray-500">{post.date}</span>
                     <p className="font-medium heading mb-4 hover:text-[#0D6DFD] cursor-pointer">{post.title}</p>
                   </li>
@@ -304,9 +267,9 @@ const Blog = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h2 className="text-xl font-semibold pt-8 mb-4">Have Additional Questions?</h2>
+              <h2 className="text-xl font-bold font-sans pt-8 mb-4">Have Additional Questions?</h2>
               <ul className="space-y-2  ">
-                <li className='py-2 mt-2 text-sm overflow-hidden '>
+                <li className='py-2 mt-2 text-xm overflow-hidden '>
                   <hr className='w-75 mx-auto border border-l-0 border-r-0 border-b-0 pt-3 border-t-gray-600' />
                   3rd Avenue, 83 Manhattan, London, UK
                 </li>
@@ -318,20 +281,7 @@ const Blog = () => {
                     className="group hidden lg:flex items-center gap-2 text-[#041C33] text-sm bg-[#DBE9A1] hover:bg-[#041C33] hover:text-[#DBE9A1] px-5 py-3 rounded  transition-colors duration-300"
                   >
                     Contact Us
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="rotate fill-current stroke-current text-[#041C33] group-hover:text-[#DBE9A1] transition-colors duration-300"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        fill="currentColor"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        d="M16 5c0 .742.733 1.85 1.475 2.78c.954 1.2 2.094 2.247 3.401 3.046C21.856 11.425 23.044 12 24 12m0 0c-.956 0-2.145.575-3.124 1.174c-1.307.8-2.447 1.847-3.401 3.045C16.733 17.15 16 18.26 16 19m8-7H0"
-                      />
-                    </svg>
+                    <TiArrowForward className="w-[19px] h-[19px]" />
                   </button>
                 </li>
 
