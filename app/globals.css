@@ -9,7 +9,7 @@
 
 :root {
   --totaGreen: #dbe9a1;
-  --darkBlue: #041C33;
+  --darkBlue: #041c33;
   --lightBlue: #0d6dfd;
   --grayBack: #f2f2f2;
   --whiteText: #ffffff;
@@ -102,19 +102,19 @@
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   @keyframes marquee {
-  from {
-    transform: translateX(0);
+    from {
+      transform: translateX(0);
     }
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
     }
   }
   @keyframes marquee-vertical {
-  from {
-    transform: translateY(0);
+    from {
+      transform: translateY(0);
     }
-  to {
-    transform: translateY(calc(-100% - var(--gap)));
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
     }
   }
 }
@@ -145,41 +145,40 @@
 } */
 
 @keyframes shadowAnim {
-
   0% {
-      transform: scale(1);
-      opacity: 1;
+    transform: scale(1);
+    opacity: 1;
   }
   100% {
-      transform: scale(1.2);
-      opacity: 0%;
+    transform: scale(1.2);
+    opacity: 0%;
   }
 }
 @keyframes shortPlus {
   0% {
     transform: rotate(90deg) scale(1);
-}
-50% {
+  }
+  50% {
     transform: rotate(0) scale(1);
-}
-75% {
+  }
+  75% {
     transform: rotate(0deg) scale(0.9);
-}
-100% {
+  }
+  100% {
     transform: rotate(0) scale(1);
-}
+  }
 }
 
 @keyframes upDown {
   0% {
     transform: scale(1);
-}
-50% {
+  }
+  50% {
     transform: scale(1.05);
-}
-100% {
+  }
+  100% {
     transform: scale(1);
-}
+  }
 }
 @keyframes rightLeftupDown {
   0% {
@@ -227,11 +226,41 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* --************************************************************ */
+.rotate90deg {
+  transform: rotate(-90deg) !important;
+  border-radius: 30px 30px 0px 0px !important;
+  letter-spacing: 11px;
+  word-spacing: 10px;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .rounded-circle {
+    border-radius: 50%;
+    border-bottom-left-radius: 20px;
+  }
+
+  .bg-custom-blue {
+    background-color: #2d4686;
+  }
+}
+
+@layer utilities {
+  .custom-radius {
+    border-radius: 30px 200px 25px 30px !important;
+  }
+
+  .custom-radius-sm {
+    border-radius: 30px 30px 25px 30px !important;
+    border: 10px solid #0d6dfd;
   }
 }
