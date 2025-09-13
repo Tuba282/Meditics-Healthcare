@@ -28,7 +28,7 @@ const components: { title: string; href: string; description: string }[] = [
   },
   {
     title: "Team Members",
-    href: "/teamMember/:id",
+    href: "/detailTeam/1",
     description:
       "Our team compassionate caregivers, committed to providing personalized, expert medical care.",
   }
@@ -48,7 +48,9 @@ function Navbar() {
         <Image src={'/logo.svg'} alt="logo" className="me-20" width={200} height={100} />
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Home</NavigationMenuTrigger>
+            <NavigationMenuTrigger>
+              <Link href="/home">Home</Link>
+            </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.80fr_1fr]">
                 <li className="row-span-3">
@@ -76,7 +78,9 @@ function Navbar() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>About</NavigationMenuTrigger>
+            <NavigationMenuTrigger>
+              <Link href="/about">About</Link>
+            </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[250px] gap-2 md:grid-cols-1 ">
                 {components.map((component) => (

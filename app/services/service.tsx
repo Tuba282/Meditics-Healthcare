@@ -7,39 +7,46 @@ import { TiArrowForward } from "react-icons/ti";
 import Image from "next/image";
 
 import { Marquee } from "./marquee";
+import Link from "next/link";
 
 const services = [
     {
+        id: 1,
         title: "Clinical Pathology",
         description: "Clinical pathology involves the analysis of bodily fluids and tissues.",
         image: "/service-1.jpg",
         icon: <RiMicroscopeFill className="text-blue-700" />
     },
     {
+        id: 2,
         title: "Histopathology",
         description: "Histopathology examines tissue samples under a microscope to detect abnormalities.",
         image: "/service-2.jpg",
         icon: <FaVialVirus className="text-blue-700" />
     },
     {
+        id: 3,
         title: "Biochemistry",
         description: "Biochemistry tests measure chemical in blood and body fluids.",
         image: "/service-3.jpg",
         icon: <LuDna className="text-blue-700" />
     },
     {
+        id: 4,
         title: "Hematology (Blood Tests)",
         description: "Hematology tests analyze blood components to detect anemia, infections.",
         image: "/service-4.jpg",
         icon: <RiMicroscopeFill className="text-blue-700" />
     },
     {
+        id: 5,
         title: "Urine & Stool Analysis",
         description: "Urine and stool analysis help detect infections, digestive issues, kidney problems.",
         image: "/service-5.jpg",
         icon: <FaVialVirus className="text-blue-700" />
     },
     {
+        id: 6,
         title: "Hemoglobin (Hb)",
         description: "Hemoglobin (Hb) is a vital protein in red blood cells that carries oxygen within the body.",
         image: "/service-6.jpg",
@@ -57,7 +64,7 @@ const Service: React.FC = () => {
 
                 <div className="flex justify-center items-center flex-wrap gap-3">
                     {services.map((service, idx) => (
-                        <div key={idx} className="group w-[350px] h-[400px] relative flex flex-col items-center rounded-xl bg-gray-100 shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
+                        <div key={idx + service.id} className="group w-[350px] h-[400px] relative flex flex-col items-center rounded-xl bg-gray-100 shadow-md hover:shadow-lg transition duration-300 overflow-hidden">
                             {/* Image */}
                             <div className="h-58 w-full overflow-hidden">
                                 <Image
@@ -76,10 +83,10 @@ const Service: React.FC = () => {
                                 <div className="w-10 h-10 flex group-hover:hidden transition-transform duration-300 justify-center items-center  bg-blue-600 rounded">
                                     <TiArrowForward className="text-white" />
                                 </div>
-                                <button className="hidden group-hover:flex justify-center items-center gap-2 h-10 w-0 group-hover:w-40  bg-blue-600 text-white text-sm font-medium px-4 py-1 rounded transition-all duration-300">
+                                <Link href={`/detailService/${service.id}`} className="hidden group-hover:flex justify-center items-center gap-2 h-10 w-0 group-hover:w-40  bg-blue-600 text-white text-sm font-medium px-4 py-1 rounded transition-all duration-300">
                                     Read More
                                     <TiArrowForward className="text-lg" />
-                                </button>
+                                </Link>
                             </div>
 
                             {/* Content */}
@@ -96,7 +103,7 @@ const Service: React.FC = () => {
                 </div>
             </div>
 
-            <Marquee/>
+            <Marquee />
         </section>
     );
 };

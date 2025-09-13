@@ -1,6 +1,7 @@
 "use client"
 import 'swiper/css';
 import 'swiper/css/autoplay';
+import { IoMailOpen } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 import { useState } from "react";
 import { FaRegClock } from "react-icons/fa";
@@ -142,29 +143,27 @@ const Blog = () => {
                 <Image width={300} height={300} src={post.img} alt={post.title} className="w-full! h-full! object-cover" />
                 <div className="lg:p-6 p-2 space-y-2">
                   {/* Meta Info */}
-                  <div className="text-sm text-gray-500 flex items-center mb-5 gap-4">
-                    <span className="flex gap-1 text-white p-1 px-4 bg-[#0D6DFD] rounded-full">
+                  <div className="text-sm text-gray-500 hidden sm:flex items-center mb-5 gap-4">
+                    <span className="flex justify-center items-center gap-1 text-white p-1 px-4 bg-[#0D6DFD] rounded-full">
                       {/* Author Icon */}
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-                        <path fill="white" d="M17.25 2.75H6.75A4.75 4.75 0 0 0 2 7.5v9a4.75 4.75 0 0 0 4.75 4.75h10.5A4.76 4.76 0 0 0 22 16.5v-9a4.76 4.76 0 0 0-4.75-4.75m-3.65 8.32a3.26 3.26 0 0 1-3.23 0L3.52 7.14a3.25 3.25 0 0 1 3.23-2.89h10.5a3.26 3.26 0 0 1 3.23 2.89z" stroke-width="0.2" stroke="#040000" />
-                      </svg>
+                      <IoMailOpen color="#ffff" className="w-[16px] h-[16px]" />
                       By {post.author}
                     </span>
-                    <span className="flex gap-1">
-                      <FaRegClock color="#B6B7B9" className="w-[19px] h-[19px]" />
+                    <span className="flex justify-center items-center gap-1">
+                      <FaRegClock color="#B6B7B9" className="w-[16px] h-[16px]" />
                       {post.readTime}
                     </span>
-                    <span className="flex gap-3 items-center  ">
-                      <TfiEmail color="#B6B7B9" className="w-[19px] h-[19px]" />
+                    <span className="flex justify-center gap-3 items-center  ">
+                      <TfiEmail color="#B6B7B9" className="w-[16px] h-[16px]" />
                       {post.comments} Comments
                     </span>
                   </div>
 
                   {/* Title + Excerpt */}
-                  <h2 className="lg:text-3xl text-2xl font-bold text-[#041C33] transition">
+                  <h2 className="lg:text-3xl text-lg sm:text-2xl font-bold text-[#041C33] transition">
                     {post.title}
                   </h2>
-                  <p className="text-gray-500 mt-2 mb-4" style={{ fontSize: "15px" }}>
+                  <p className="text-gray-500 text-xs sm:text-sm mt-2 mb-4" style={{ fontSize: "15px" }}>
                     {post.text}
                   </p>
 
@@ -184,17 +183,17 @@ const Blog = () => {
             ))}
 
             <div className="flex justify-center items-center gap-2 mt-8">
-              <button className="p-3 border border-gray-400 bg-white rounded-full transition"
+              <button className="p-3 border border-gray-300 bg-white rounded-full transition"
                 onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
               >
-                <TiArrowBack className="rover:text-[#0D6DFD] text-[#041C33] bg-white group-hover:text-[white]" />
+                <TiArrowBack className="rover:text-[#0D6DFD] text-gray-500 bg-white group-hover:text-[white]" />
 
               </button>
 
               {[...Array(totalPages)].map((_, i) => (
                 <button className={`px-4 py-2 rounded  ${currentPage === i + 1
-                  ? "bg-[#0D6DFD] text-white  border border-gray-400 rounded-full"
-                  : " border border-gray-400 bg-white rounded-full text-[#041C33] hover:bg-[#0D6DFD] hover:text-white"
+                  ? "bg-[#0D6DFD] text-white  border border-gray-300 rounded-full"
+                  : " border border-gray-300 bg-white rounded-full text-gray-500 hover:bg-[#0D6DFD] hover:text-white"
                   } transition`}
                   key={i}
                   onClick={() => setCurrentPage(i + 1)}
@@ -203,10 +202,10 @@ const Blog = () => {
                 </button>
               ))}
 
-              <button className="p-3 border border-gray-400 bg-white rounded-full transition"
+              <button className="p-3 border border-gray-300 bg-white rounded-full transition"
                 onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
               >
-                <TiArrowForward className="hover:text-[#0D6DFD] text-[#041C33] bg-white group-hover:text-[white]" />
+                <TiArrowForward className="hover:text-[#0D6DFD] text-gray-500 bg-white group-hover:text-[white]" />
               </button>
             </div>
           </div>
@@ -234,7 +233,7 @@ const Blog = () => {
               <h2 className="text-xl font-bold font-sans mb-4 text-[#041C33]" >Categories</h2>
               <ul className="space-y-2 text-sm text-gray-700">
                 {categories.map((cat, i) => (
-                  <li key={i} className="cursor-pointer flex justify-between">
+                  <li key={i} className="hover:px-4 hover:text-white hover:bg-blue-500 p-2 rounded duration-500 transition-all cursor-pointer flex justify-between">
                     <span className="heading text-xs">{cat.title}</span>
                     <span className="heading text-xs">{cat.cat}</span>
                   </li>
@@ -261,7 +260,7 @@ const Blog = () => {
 
               {/* Background Image */}
               <div className="absolute inset-0 z-0 opacity-10">
-                <Image width={30} height={30}
+                <Image width={300} height={300}
                   src="https://meditics.temptics.com/assets/img/service-sidebar-cta-bg.jpg"
                   alt="Background"
                   className="w-full h-full object-cover"

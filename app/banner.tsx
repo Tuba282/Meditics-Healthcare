@@ -9,13 +9,13 @@ interface BannerProps {
 
 const Banner = (page: BannerProps) => {
   return (
-    <div className='relative w-full h-48 md:min-h-80 bg-gradient-to-r from-blue-950 from-10% via-[#041C33] via-30% to-[#041C33] to-90% flex flex-col justify-center items-center '>
+    <div className='relative overflow-hidden w-full h-48 md:min-h-80 bg-gradient-to-r from-blue-950 from-10% via-[#041C33] via-30% to-[#041C33] to-90% flex flex-col justify-center items-center '>
       {/* bg-[#041C33]  */}
-      <h1 className='font-bold text-white text-4xl md:text-6xl font-sans italic'>{page.page}</h1>
-      <span className=" text-white text-md md:text-2xl font-sans italic flex gap-3 justify-center items-center my-5 capitalize"><Link href={'home'}>Home</Link> <FaChevronRight className="text-sm" /><Link href={`${page.page}`}>{page.page}</Link> </span>
+      <h1 className='font-bold text-white text-4xl md:text-6xl font-sans italic capitalize'>{page.page}</h1>
+      <span className=" text-white text-md md:text-2xl font-sans italic flex gap-3 justify-center items-center my-5 capitalize z-3!"><Link href={'home'}>Home</Link> <FaChevronRight className="text-sm" /><Link href={`${page.page}`}>{page.page}</Link> </span>
 
-      <Image src="https://meditics.temptics.com/assets/img/banner-vector-2.svg" width={50} height={50} style={{ animation: 'shortPlus 2s infinite forwards linear' }} className="w-[80px]! h-[80px]! z-1 absolute top-25 left-130 blur-[1px] grayscale-50 transition duration-700" alt="Doctor" />
-      <Image src="https://meditics.temptics.com/assets/img/banner-vector-2.svg" width={50} height={50} style={{ animation: 'upDown 5s infinite forwards linear' }} className="w-[40px]! h-[40px]! z-1 absolute top-20 left-30 blur-[1px] grayscale-50 transition duration-700" alt="Doctor" />
+      <Image src="https://meditics.temptics.com/assets/img/banner-vector-2.svg" width={50} height={50} style={{ animation: 'shortPlus 2s infinite forwards linear' }} className="w-[80px]! h-[80px]! z-1 absolute top-25 left-120 blur-[1px] grayscale-50 transition duration-700" alt="Doctor" />
+      <Image src="https://meditics.temptics.com/assets/img/banner-vector-2.svg" width={50} height={50} style={{ animation: 'shortPlus 5s infinite forwards linear' }} className="w-[40px]! h-[40px]! z-1 absolute top-5 md:top-20 left-10 md:left-30 blur-[1px] grayscale-50 transition duration-700" alt="Doctor" />
       <Image src="https://meditics.temptics.com/assets/img/banner-vector-2.svg" width={50} height={50} style={{ animation: 'shortPlus 3s infinite forwards linear' }} className="w-[40px]! h-[40px]! z-1 absolute bottom-10 left-6 grayscale-70 transition duration-700" alt="Doctor" />
       <svg xmlns="http://www.w3.org/2000/svg" width={80} height={80} style={{ animation: 'rightLeftupDown 3s infinite forwards linear' }} className="w-[40px]! h-[40px]! z-1 absolute bottom-10 right-6 grayscale-70 transition duration-700" viewBox="0 0 512 512">
         <path fill="#324B78" d="M210.3 65.5c28.8 7.3 51.4 29.9 58.7 58.7c.7 2.8 4.3 2.8 5 0c7.3-28.8 29.9-51.4 58.7-58.7c2.8-.7 2.8-4.3 0-5c-28.8-7.3-51.4-29.9-58.7-58.7c-.7-2.8-4.3-2.8-5 0c-7.3 28.8-29.9 51.4-58.7 58.7c-2.8.7-2.8 4.3 0 5" strokeWidth="1" stroke="#324B78" />

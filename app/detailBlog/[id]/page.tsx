@@ -1,13 +1,15 @@
 "use client";
 import { useParams } from "next/navigation";
 import Image from "next/image";
-import { TiArrowBack, TiArrowForward } from "react-icons/ti";
 import { CiSearch } from "react-icons/ci";
-import { FaRegClock } from "react-icons/fa";
+import { FaFacebook, FaRegClock } from "react-icons/fa";
 import { TfiEmail } from "react-icons/tfi";
 import Banner from "@/app/banner";
 import { Button } from "@/components/ui/button";
 import { HiOutlineArrowTrendingUp } from "react-icons/hi2";
+import { TiArrowForward } from "react-icons/ti";
+import { BsTwitter, BsYoutube } from "react-icons/bs";
+import { AiFillInstagram } from "react-icons/ai";
 
 const blogPosts = [
     {
@@ -147,7 +149,7 @@ export default function DetailBlog() {
 
     return (
         <div>
-            <Banner page={'Detail Blog'} />
+            <Banner page={'detail blog'} />
 
             <div className="max-w-6xl flex flex-wrap justify-center items-center gap-8 mb-15 mt-16 bg-white mx-auto p-3">
                 <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -160,12 +162,10 @@ export default function DetailBlog() {
                                     <Image width={300} height={300} src={post.img} alt={post.title} className="w-full! h-full! object-cover" />
                                     <div className="lg:p-6 p-2 space-y-2">
                                         {/* Meta Info */}
-                                        <div className="text-sm text-gray-500 flex items-center mb-5 gap-4">
+                                        <div className="text-sm text-gray-500 hidden sm:flex items-center mb-5 gap-4">
                                             <span className="flex gap-1 text-white p-1 px-4 bg-[#0D6DFD] rounded-full">
                                                 {/* Author Icon */}
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-                                                    <path fill="white" d="M17.25 2.75H6.75A4.75 4.75 0 0 0 2 7.5v9a4.75 4.75 0 0 0 4.75 4.75h10.5A4.76 4.76 0 0 0 22 16.5v-9a4.76 4.76 0 0 0-4.75-4.75m-3.65 8.32a3.26 3.26 0 0 1-3.23 0L3.52 7.14a3.25 3.25 0 0 1 3.23-2.89h10.5a3.26 3.26 0 0 1 3.23 2.89z" stroke-width="0.2" stroke="#040000" />
-                                                </svg>
+                                                <TfiEmail color="#B6B7B9" className="w-[19px] h-[19px]" />
                                                 By {post.author}
                                             </span>
                                             <span className="flex gap-1">
@@ -188,8 +188,8 @@ export default function DetailBlog() {
 
                                     </div>
                                 </div>
-                                <div className="p-4 bg-blue-200 rounded border-b-2 border-blue-700 mt-4 mb-10" >
-                                    This blog post hits the mark perfectly for our target audience — busy professionals who care about their health but struggle with time. — John Doe
+                                <div className="p-4 bg-blue-200 rounded border-b-2 border-blue-700 mt-4 mb-10 font-sans italic" >
+                                    This blog post hits the mark perfectly for our target audience — busy professionals who care about their health but struggle with time . <span className="font-semibold text-blue-500"> — John Doe</span>
                                 </div>
 
                                 {headings.map((heading, idx) => (
@@ -198,6 +198,37 @@ export default function DetailBlog() {
                                         <p className="text-gray-700 text-sm">{heading.text}</p>
                                     </div>
                                 ))}
+                                <div className="w-full flex justify-between items-center flex-col md:flex-row gap-4 mb-6">
+                                    <Image src="https://meditics.temptics.com/assets/img/blog-2.jpg" alt="family" width={250} height={250} className="rounded-lg object-cover w-full md:w-[50%] h-[220px]" />
+                                    <Image src="https://meditics.temptics.com/assets/img/blog-3.jpg" alt="doctor" width={250} height={250} className="rounded-lg object-cover w-full md:w-[50%] h-[220px]" />
+                                </div>
+                                <div className="mb-4">
+                                    <span className="font-bold text-lg text-[#041C33]">Final Tip:</span>
+                                    <p className="text-gray-700 mt-1 text-[15px]">Start small. You don`t need a perfect routine — just consistent, mindful choices. A healthier you is a more productive, happier you.</p>
+                                </div>
+                                <div className="flex justify-between items-center">
+                                    <div className="flex flex-wrap items-center gap-2 mb-4">
+                                        <span className="font-semibold text-gray-700">Tags:</span>
+                                        <span className="bg-gray-100 px-4 py-1 rounded-full text-gray-700 text-xs font-medium">Reseller</span>
+                                        <span className="bg-gray-100 px-4 py-1 rounded-full text-gray-700 text-xs font-medium">Hosting</span>
+                                        <span className="bg-gray-100 px-4 py-1 rounded-full text-gray-700 text-xs font-medium">WP Hosting</span>
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                        <a href="#" className="group text-gray-500 bg-gray-200 rounded-full p-2 hover:bg-blue-500">
+                                            <FaFacebook className="w-[15px] h-[15px] group-hover:text-white" />
+                                        </a>
+
+                                        <a href="#" className="group text-gray-500 bg-gray-200 rounded-full p-2 hover:bg-blue-500">
+                                            <BsYoutube className="w-[15px] h-[15px] group-hover:text-white" />
+                                        </a>
+                                        <a href="#" className="group text-gray-500 bg-gray-200 rounded-full p-2 hover:bg-blue-500">
+                                            <BsTwitter className="w-[15px] h-[15px] group-hover:text-white" />
+                                        </a>
+                                        <a href="#" className="group text-gray-500 bg-gray-200 rounded-full p-2 hover:bg-blue-500">
+                                            <AiFillInstagram className="w-[15px] h-[15px] group-hover:text-white" />
+                                        </a>
+                                    </div>
+                                </div>
 
                                 <div className="w-full mt-5  mx-auto">
                                     {/* Form matching the provided image */}
@@ -268,7 +299,7 @@ export default function DetailBlog() {
                             <h2 className="text-xl font-bold font-sans mb-4 text-[#041C33]" >Categories</h2>
                             <ul className="space-y-2 text-sm text-gray-700">
                                 {categories.map((cat, i) => (
-                                    <li key={i} className="cursor-pointer flex justify-between">
+                                    <li key={i} className="hover:px-4 hover:text-white hover:bg-blue-500 p-2 rounded duration-500 transition-all cursor-pointer flex justify-between">
                                         <span className="heading text-xs">{cat.title}</span>
                                         <span className="heading text-xs">{cat.cat}</span>
                                     </li>
@@ -295,7 +326,7 @@ export default function DetailBlog() {
 
                             {/* Background Image */}
                             <div className="absolute inset-0 z-0 opacity-10">
-                                <Image width={30} height={30}
+                                <Image width={300} height={300}
                                     src="https://meditics.temptics.com/assets/img/service-sidebar-cta-bg.jpg"
                                     alt="Background"
                                     className="w-full h-full object-cover"
@@ -327,15 +358,3 @@ export default function DetailBlog() {
         </div>
     );
 }
-
-// <div className="max-w-3xl mx-auto py-10 px-4">
-//     <h1 className="text-3xl font-bold mb-4 text-[#041C33]">{post.title}</h1>
-//     <div className="flex items-center gap-4 text-gray-500 mb-6">
-//         <span>By {post.author}</span>
-//         <span>{post.date}</span>
-//         <span>{post.readTime}</span>
-//         <span>{post.comments} Comments</span>
-//     </div>
-//     <Image src={post.img} alt={post.title} width={800} height={400} className="rounded mb-6 w-full h-auto object-cover" />
-//     <p className="text-lg text-gray-700 leading-relaxed">{post.text}</p>
-// </div>
