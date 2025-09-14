@@ -11,12 +11,15 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from 'next/image';
 import { useRef, useEffect, useState } from 'react';
+import type { Swiper as SwiperType } from 'swiper';
+import { RiVideoOnAiFill } from "react-icons/ri";
 
 
 const About = () => {
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const swiperRef = useRef<SwiperType | null>(null);
   const [swiperReady, setSwiperReady] = useState(false);
 
   useEffect(() => {
@@ -64,7 +67,7 @@ const About = () => {
 
                 {/* <!-- Back Image --> */}
                 <div className="-left-[248px] lg:block md:block hidden text-center transform-3d rotate90deg md:bottom-[248px] bg-[#0D6DFD] lg:p-4 md:p-4 text-white z-40  absolute " >
-                  12+ YEARS EXPERIENCE 
+                  12+ YEARS EXPERIENCE
                   <span className="text-[#0D6DFD]">cs45a</span>
                 </div>
 
@@ -414,7 +417,7 @@ const About = () => {
               nextEl: nextRef.current,
             } : false}
             onSwiper={(swiper) => { swiperRef.current = swiper; }}
-            className="w-full"> 
+            className="w-full">
 
             {testimonials.map((t, i) => (
 
@@ -460,7 +463,7 @@ const About = () => {
             <span className="text-[#0D6DFD] mt-5  lg:mt-0 pt-5  lg:pt-0 flex gap-2 lg:justify-start justify-center text-sm font-medium  uppercase tracking-wide"  >
               <BiSolidHeart color='#0D6DFD' /> YOUR HEALTH, YOUR CONVENIENCE</span>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug" data-aos="fade-up" data-aos-duration="1050">Consult Your Doctor Online <br />— Anytime, Anywhere</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug">Consult Your Doctor Online <br />— Anytime, Anywhere</h2>
 
             <p className="text-gray-500 text-sm leading-relaxed"  >
               Say goodbye to long queues and unnecessary travel. With our secure video consultation service, you will be able to get experienced doctors from the comfort of your home.
@@ -468,24 +471,24 @@ const About = () => {
 
             <ul className="text-gray-600 space-y-2 text-sm  list-disc list-inside"  >
 
-              <li className='flex  lg:justify-start md:items-center  md:justify-center justify-center items-start  md:p-1 text-[12px] sm:text-[14px] md:text-[16px]'>
+              <li className='flex gap-3 lg:justify-start md:items-center  md:justify-center justify-center items-start  md:p-1 text-[12px] sm:text-[14px] md:text-[16px]'>
                 <span className='bg-[#0D6DFD] rounded-full p-1'>
-                  <FaAngleRight />
+                  <FaAngleRight className="text-white" />
                 </span>&nbsp;Speak with certified specialists in real time</li>
 
-              <li className='flex  lg:justify-start md:items-center  md:justify-center justify-center items-start  md:p-1 text-[12px] sm:text-[14px] md:text-[16px]'>
+              <li className='flex gap-3 lg:justify-start md:items-center  md:justify-center justify-center items-start  md:p-1 text-[12px] sm:text-[14px] md:text-[16px]'>
                 <span className='bg-[#0D6DFD] rounded-full p-1'>
-                  <FaAngleRight />
+                  <FaAngleRight className="text-white" />
                 </span>&nbsp;Easy appointment booking via mobile or web</li>
 
-              <li className='flex  lg:justify-start md:items-center  md:justify-center justify-center items-start  md:p-1 text-[12px] sm:text-[14px] md:text-[16px]'>
+              <li className='flex gap-3 lg:justify-start md:items-center  md:justify-center justify-center items-start  md:p-1 text-[12px] sm:text-[14px] md:text-[16px]'>
                 <span className='bg-[#0D6DFD] rounded-full p-1'>
-                  <FaAngleRight />
+                  <FaAngleRight className="text-white" />
                 </span>&nbsp;Private, secure, and confidential video calls</li>
 
-              <li className='flex   lg:justify-start md:items-center  md:justify-center justify-center items-start  md:p-1 text-[12px] sm:text-[14px] md:text-[16px]'>
+              <li className='flex gap-3  lg:justify-start md:items-center  md:justify-center justify-center items-start  md:p-1 text-[12px] sm:text-[14px] md:text-[16px]'>
                 <span className='bg-[#0D6DFD] rounded-full p-1'>
-                  <FaAngleRight />
+                  <FaAngleRight className="text-white" />
                 </span>&nbsp;Available 7 days a week, including evenings</li>
             </ul>
 
@@ -546,12 +549,13 @@ const About = () => {
 
               {/* <!-- Back Image --> */}
               <div className="lg:w-[190px] lg:h-[190px] h-[100px] lg:left-[0px] lg:top-[0px]  z-10  absolute "  >
-                <Image src="https://meditics.temptics.com/assets/img/inner-video-call-img-2.png" width={100} height={100} alt="Consult Top Doctors" className="w-full h-full object-cover" />
+                <Image src="https://meditics.temptics.com/assets/img/inner-video-call-img-2.png" width={300} height={300} alt="Consult Top Doctors" className="w-full h-full object-cover" />
               </div>
 
               {/* <!-- Back Image --> */}
               <div className="lg:w-[100px] w-[50px] p-0 lg:h-[100px] h-[50px] bg-[#DBE9A1] flex justify-center items-center rounded-full lg:-right-[50px] right-0 lg:top-[0px]  z-10  absolute " >
-                <Image src="/video.png" alt="video" className="lg:w-[60px] w-[30px] object-cover" width={100} height={100} />
+
+                <RiVideoOnAiFill className="text-5xl rotate-25" />
               </div>
 
 
