@@ -73,13 +73,13 @@ const About = () => {
 
                 {/* <!-- Back Image --> */}
                 <div className="w-[190px] h-[190px] md:-right-[40px] lg:block md:block hidden right-[10px]  lg:top-[100px] top-[300px] rounded z-10  absolute " >
-                  <Image width={100} height={100} src="https://meditics.temptics.com/assets/img/about-2-img-2.jpg" alt="Consult Top Doctors" className="w-full h-full rounded-xl object-cover" />
+                  <Image width={400} height={400} src="https://meditics.temptics.com/assets/img/about-2-img-2.jpg" alt="Consult Top Doctors" className="w-full h-full rounded-xl object-cover" />
                 </div>
 
 
                 {/* <!-- Front Image --> */}
                 <div className=" w-full lg:h-[550px] md:h-[550px] rounded-circle bg-custom-blue border-circle2 relative" >
-                  <Image width={100} height={100} src="https://meditics.temptics.com/assets/img/about-2-img-1.jpg" alt="About" className="w-full h-full object-cover rounded-xl custom-radius sm:custom-radius-sm  border-r-5 border-[#DBE9A1]" />
+                  <Image width={400} height={400} src="https://meditics.temptics.com/assets/img/about-2-img-1.jpg" alt="About" className="w-full h-full object-cover rounded-xl custom-radius sm:custom-radius-sm  border-r-5 border-[#DBE9A1]" />
                 </div>
 
 
@@ -147,7 +147,7 @@ const About = () => {
                   </li>
 
                   <li className='flex  lg:justify-start md:items-center  md:justify-center justify-start items-start  md:p-1'>
-                    <Image src="https://meditics.temptics.com/assets/img/signature.png" alt="signature" width={200} height={100} />
+                    <Image src="https://meditics.temptics.com/assets/img/signature.png" alt="signature" width={300} height={300} />
                   </li>
                 </div>
               </ul>
@@ -192,7 +192,7 @@ const About = () => {
 
             <div className="relative">
               <div className="flex">
-                <Image src="https://meditics.temptics.com/assets/img/why-choose-img-1.jpg" alt="Nurse  with patient" width={100} height={100}
+                <Image src="https://meditics.temptics.com/assets/img/why-choose-img-1.jpg" alt="Nurse  with patient" width={300} height={300}
                   className="rounded-xl lg:w-[430px] z-5 w-full object-cover shadow-md  lg:border-none border-8 border-[#DBE9A1]" />
 
                 <span className="lg:absolute lg:block lg:-right-[20px] lg:top-[50px] lg:w-[300px]  lg:h-[490px] border-8 rounded-xl hidden border-[#DBE9A1]"></span>
@@ -344,7 +344,7 @@ const About = () => {
             src="https://meditics.temptics.com/assets/img/feedback-2-vector-1.svg"
             alt="Background Illustration"
             className="absolute "
-            width={100} height={100}
+            width={300} height={300}
           />
         </div >
 
@@ -493,7 +493,7 @@ const About = () => {
             </ul>
 
             <div className='flex lg:flex-row flex-col lg:justify-start justify-center lg:gap-4  mx-auto'>
-              <motion.button data-aos="fade-up" data-aos-duration="1900"
+              <motion.button
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
@@ -516,7 +516,7 @@ const About = () => {
                 </svg>
               </motion.button>
 
-              <motion.button data-aos="fade-up" data-aos-duration="1900"
+              <motion.button 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
@@ -561,7 +561,7 @@ const About = () => {
 
               {/* <!-- Front Image --> */}
               <div className="w-full lg:h-[550px] border-circle relative"  >
-                <Image src="https://meditics.temptics.com/assets/img/inner-video-call.png" width={100} height={100} alt="Dr. Tiffany Rizka" className="w-full h-full object-cover" />
+                <Image src="https://meditics.temptics.com/assets/img/inner-video-call.png" width={300} height={300} alt="Dr. Tiffany Rizka" className="w-full h-full object-cover" />
               </div>
 
 
